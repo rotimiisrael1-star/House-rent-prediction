@@ -8,7 +8,7 @@ import datetime
 
 st.set_page_config(
     page_title="House Rent Prediction System",
-    page_icon="🏠",
+    page_icon="🏠 Browse Available Houses",
     layout="wide"
 )
 
@@ -26,7 +26,7 @@ dark_mode = st.sidebar.toggle("🌙 Dark Mode")
 
 if dark_mode:
 
-    background_color = "#0e1117"
+    background_color = "#1A103D"
     card_color = "#1e1e1e"
     text_color = "#ffffff"
     secondary_text = "#cccccc"
@@ -39,8 +39,8 @@ else:
     text_color = "#000000"
     secondary_text = "#555555"
     button_color = "#1f4e79"
-
-# CUSTOM CSS
+#000000
+    #ffffff
 
 st.markdown(f"""
 <style>
@@ -96,6 +96,15 @@ st.markdown(f"""
     font-size: 15px;
 }}
 
+# # /* LABELS ONLY */
+# .stSelectbox label,
+# .stNumberInput label,
+# label {{
+#     color: {button_color} !important;
+#     font-weight: 700 !important;
+#     font-size: 16px !important;
+# }}
+
 div.stButton > button {{
     background-color: {button_color};
     color: white;
@@ -109,6 +118,58 @@ div.stButton > button {{
 div.stButton > button:hover {{
     opacity: 0.85;
 }}
+
+.tabs {{
+    text_color: black;
+}}
+/* Tab headers: black by default, unaffected by hover */
+.stTabs [data-baseweb="tab-list"] button {{
+    color: #000000 !important;
+}}
+
+.stTabs [data-baseweb="tab-list"] button p {{
+    color: #000000 !important;
+}}
+
+.stTabs [data-baseweb="tab-list"] button:hover {{
+    color: #000000 !important;
+}}
+
+.stTabs [data-baseweb="tab-list"] button:hover p {{
+    color: #000000 !important;
+}}
+/* Metrics (R², RMSE, MAE) */
+[data-testid="stMetricValue"] {{
+    color: {text_color} !important;
+}}
+
+[data-testid="stMetricLabel"] {{
+    color: {text_color} !important;
+}}
+
+[data-testid="stMetricDelta"] {{
+    color: {text_color} !important;
+}}
+
+/* Dataframe / table text */
+[data-testid="stDataFrame"] {{
+    color: {text_color} !important;
+}}
+
+[data-testid="stTable"] {{
+    color: {text_color} !important;
+}}
+
+/* Bar chart labels/axis (Vega-Lite chart container) */
+[data-testid="stVegaLiteChart"] text {{
+    fill: {text_color} !important;
+}}
+
+/* Subheaders inside the analytics tab */
+.stApp h3, .stApp h2 {{
+    color: {text_color} !important;
+}}
+
 
 </style>
 """, unsafe_allow_html=True)
